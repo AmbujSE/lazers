@@ -1,10 +1,9 @@
 import circleshape
-import constants
 import pygame
+import constants
 
-class Asteroid(circleshape.CircleShape):
-
-    def __init__(self,x, y, radius):
+class Shot(circleshape.CircleShape):
+    def __init__(self, x, y, radius):
         super().__init__(x, y, radius)
         self.x = x
         self.y = y
@@ -15,8 +14,3 @@ class Asteroid(circleshape.CircleShape):
 
     def update(self, dt):
         self.position += self.velocity * dt
-
-    def split(self):
-        if self.radius <= constants.ASTEROID_MIN_RADIUS:
-            return
-        
